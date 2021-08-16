@@ -1,0 +1,29 @@
+  
+form {
+    margin-top: 3rem;
+  }
+  
+  form input[name="city"],
+  form input[name="country"] {
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-bottom: 2px solid whitesmoke;
+    border-radius: 0;
+   
+  }
+
+  .container input:focus {
+    background-color: transparent;
+    box-shadow: none !important;
+    border: none;
+    border-bottom: 2px solid tomato; 
+    margin-bottom: 2;
+  }
+
+  .container input{
+    color: white !important;
+  }
+  .container ::-webkit-input-placeholder {
+    color: rgb(204, 199, 199) !important;
+  }
