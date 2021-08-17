@@ -1,6 +1,7 @@
   
 form {
     margin-top: 3rem;
+    margin-left: 20rem;
   }
   
   form input[name="city"],
@@ -27,3 +28,7 @@ form {
   .container ::-webkit-input-placeholder {
     color: rgb(204, 199, 199) !important;
   }
+
+  .alert {
+    width:42%;    
+ }

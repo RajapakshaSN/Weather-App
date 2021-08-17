@@ -5,7 +5,6 @@ import Weather from './app_component/weather.component';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "weather-icons/css/weather-icons.css";
 import Form from './app_component/form.component';
-import background from "./images/weather.jpeg";
 const API_key = "96c876694bfaa16cb0af1b3c058f607f";
 
 
@@ -80,7 +79,8 @@ class App extends React.Component{
           minTemp: this.calCelsius(response.main.temp_min),
           maxTemp: this.calCelsius(response.main.temp_max),
           celsius: this.calCelsius(response.main.temp),
-          description: response.weather[0].description,       
+          description: response.weather[0].description,  
+          error:false     
       });
       this.getWeatherIcon(this.weatherIcon,response.weather[0].id);
       }
@@ -92,19 +92,25 @@ class App extends React.Component{
 
   render(){
     return(
-    <div  style={{ backgroundImage: `url(${background})`,backgroundPosition: 'center', backgroundSize: 'cover',  backgroundRepeat: 'no-repeat',height:600 }}>
-      <Form loadWeather={this.getWeather} error={this.state.error}/>        
-      <Weather city={this.state.city}
-                country={this.state.country} 
-                min_Temp={this.state.minTemp} 
-                celsuis_temp={this.state.celsius} 
-                max_Temp={this.state.maxTemp} 
-                description={this.state.description}
-                weatherIcon={this.state.icon}
-                
-        />
+      <div className="App">
+        
+        <div style={{marginLeft:120,marginTop:50}}>   
+          <Form loadWeather={this.getWeather} error={this.state.error}/>   
+          </div>   
+          <Weather city={this.state.city}
+                    country={this.state.country} 
+                    min_Temp={this.state.minTemp} 
+                    celsuis_temp={this.state.celsius} 
+                    max_Temp={this.state.maxTemp} 
+                    description={this.state.description}
+                    weatherIcon={this.state.icon}
+                    
+            />
+          
+       
+
+      </div>
       
-    </div>
     );
   }
 };
